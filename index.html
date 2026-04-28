@@ -330,7 +330,7 @@
                             </div>
                             
                             <p class="text-slate-300 mb-6 leading-relaxed">
-                                Création d'une infrastructure réseau complète (type TPE) conçue comme un laboratoire sécurisé. L'objectif était de déployer une architecture robuste (VLANs, serveurs) pour y intégrer des outils d'analyse de sécurité, de supervision avancée et de gestion de parc.
+                                Création d'un environnement isolé (Sandbox) dédié à l'apprentissage de la sécurité offensive et défensive. Ce laboratoire permet de simuler des attaques réelles sans risque pour le réseau de production.
                             </p>
 
                             <div class="mb-6">
@@ -338,28 +338,27 @@
                                 <ul class="text-slate-400 text-sm space-y-2 mt-2">
                                     <li class="flex items-start gap-2">
                                         <i class="fas fa-check mt-1 text-red-500"></i>
-                                        <span><strong>Sécurité & Analyse :</strong> Intégration d'un poste Kali Linux pour l'audit sécuritaire du réseau, et déploiement de solutions de détection d'intrusions (IDS/IPS Suricata, SIEM Wazuh).</span>
+                                        <span>Déploiement d'une machine attaquante sous <strong>Kali Linux</strong> avec outils d'audit (Nmap, Metasploit).</span>
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <i class="fas fa-check mt-1 text-red-500"></i>
-                                        <span><strong>Architecture Réseau :</strong> Segmentation par VLANs, configuration de switchs Cisco et routeurs Mikrotik (règles Firewall, application des ACL, NAT).</span>
+                                        <span>Installation de machines cibles vulnérables (Metasploitable 2, Windows 7 non patché).</span>
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <i class="fas fa-check mt-1 text-red-500"></i>
-                                        <span><strong>Services d'Infrastructure :</strong> Déploiement sous serveurs Proxmox d'un Active Directory (Samba 4), de serveurs DNS (BIND9), DHCP (Kea) et d'une base de données (MariaDB).</span>
+                                        <span>Segmentation réseau stricte (VLANs) pour isoler le laboratoire d'Internet.</span>
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <i class="fas fa-check mt-1 text-red-500"></i>
-                                        <span><strong>Déploiement & Gestion :</strong> Utilisation de FOG (PXE) pour le clonage d'images système, couplé à GLPI (inventaire/tickets) et Wiki.js pour la documentation réseau.</span>
+                                        <span>Réalisation de tests d'intrusion : scan de ports, exploitation de failles SMB et Bruteforce.</span>
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="flex flex-wrap gap-3">
                                 <span class="bg-red-900/30 text-red-200 px-3 py-1 rounded-full text-xs font-mono border border-red-500/30">Kali Linux</span>
-                                <span class="bg-red-900/30 text-red-200 px-3 py-1 rounded-full text-xs font-mono border border-red-500/30">Suricata / Wazuh</span>
-                                <span class="bg-red-900/30 text-red-200 px-3 py-1 rounded-full text-xs font-mono border border-red-500/30">Proxmox</span>
-                                <span class="bg-red-900/30 text-red-200 px-3 py-1 rounded-full text-xs font-mono border border-red-500/30">Cisco / Mikrotik</span>
+                                <span class="bg-red-900/30 text-red-200 px-3 py-1 rounded-full text-xs font-mono border border-red-500/30">Virtualisation</span>
+                                <span class="bg-red-900/30 text-red-200 px-3 py-1 rounded-full text-xs font-mono border border-red-500/30">Pentesting</span>
                             </div>
                         </div>
                     </div>
