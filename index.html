@@ -270,52 +270,81 @@
             
             <div class="space-y-12">
                 
-                <div class="glass p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10 group-hover:bg-blue-600/20 transition"></div>
+                <!-- Projet : Semperis ADFR (Remplace Configuration & Déploiement) -->
+<div class="glass p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition duration-500 group relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10 group-hover:bg-blue-600/20 transition"></div>
 
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="p-3 bg-blue-500/20 rounded-lg text-blue-400">
-                                    <i class="fas fa-laptop-code text-2xl"></i>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white">Configuration & Déploiement Matériel</h3>
-                            </div>
-                            
-                            <p class="text-slate-300 mb-6 leading-relaxed">
-                                Ce projet visait à préparer et standardiser un parc informatique pour une nouvelle équipe. Au-delà du simple assemblage, l'objectif était d'optimiser les performances et de garantir la stabilité des postes avant leur mise en production.
-                            </p>
+    <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex-1">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="p-3 bg-blue-500/20 rounded-lg text-blue-400">
+                    <i class="fas fa-shield-virus text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white">Restauration Active Directory (Semperis ADFR)</h3>
+                    <p class="text-blue-400 font-mono text-xs mt-1">SILL Entreprises | Continuité d'Activité</p>
+                </div>
+            </div>
+            
+            <p class="text-slate-300 mb-6 leading-relaxed">
+                Mise en œuvre d'une procédure de <strong>reprise après sinistre</strong> (type ransomware) pour restaurer la forêt Active Directory <code class="text-blue-400">groupe sill</code> dans un environnement isolé, garantissant la résilience de l'identité numérique du groupe.
+            </p>
 
-                            <div class="mb-6">
-                                <h4 class="text-white font-semibold mb-2 border-b border-slate-700 pb-1 inline-block">Réalisations techniques :</h4>
-                                <ul class="text-slate-400 text-sm space-y-2 mt-2">
-                                    <li class="flex items-start gap-2">
-                                        <i class="fas fa-check mt-1 text-blue-500"></i>
-                                        <span>Assemblage de composants et gestion des câbles (Cable Management) pour optimiser le flux d'air.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <i class="fas fa-check mt-1 text-blue-500"></i>
-                                        <span>Configuration du BIOS/UEFI (Secure Boot, XMP) et mise à jour des firmwares.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <i class="fas fa-check mt-1 text-blue-500"></i>
-                                        <span>Installation de l'OS (Windows 10/11 Pro) via image disque et intégration au domaine.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <i class="fas fa-check mt-1 text-blue-500"></i>
-                                        <span>Stress-test des composants (OCCT) pour valider la fiabilité thermique.</span>
-                                    </li>
-                                </ul>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h4 class="text-white font-semibold mb-2 border-b border-slate-700 pb-1 inline-block">Réalisations techniques :</h4>
+                    <ul class="text-slate-400 text-sm space-y-2 mt-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check mt-1 text-blue-500"></i>
+                            <span>Installation serveur ADFR 5.0 sur Windows Server 2019 avec instance SQL Express.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check mt-1 text-blue-500"></i>
+                            <span>Enregistrement de la forêt via <strong>scripts PowerShell</strong> (Register-ADFRForest) et gestion des métadonnées.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check mt-1 text-blue-500"></i>
+                            <span>Configuration du contrôle d'accès <strong>RBAC</strong> et sécurisation des accès administrateur.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check mt-1 text-blue-500"></i>
+                            <span>Restauration complète de 2 contrôleurs de domaine avec analyse de cohérence disque.</span>
+                        </li>
+                    </ul>
+                </div>
 
-                            <div class="flex flex-wrap gap-3">
-                                <span class="bg-blue-900/40 text-blue-200 px-3 py-1 rounded-full text-xs font-mono border border-blue-500/30">Hardware</span>
-                                <span class="bg-blue-900/40 text-blue-200 px-3 py-1 rounded-full text-xs font-mono border border-blue-500/30">Déploiement</span>
-                                <span class="bg-blue-900/40 text-blue-200 px-3 py-1 rounded-full text-xs font-mono border border-blue-500/30">Optimisation</span>
-                            </div>
+                <div class="bg-slate-800/30 p-4 rounded-xl border border-slate-700/50">
+                    <h4 class="text-white font-semibold mb-2 text-sm uppercase tracking-wider">Environnement :</h4>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between border-b border-slate-700/50 pb-1">
+                            <span class="text-slate-500">Gestion :</span>
+                            <span class="text-slate-300">Windows Server 2019</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-700/50 pb-1">
+                            <span class="text-slate-500">Cibles :</span>
+                            <span class="text-slate-300">2x WS 2012 R2 (VMs)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-700/50 pb-1">
+                            <span class="text-slate-500">Solution :</span>
+                            <span class="text-slate-300 font-mono">Semperis ADFR 5.0</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-700/50 pb-1">
+                            <span class="text-slate-500">Database :</span>
+                            <span class="text-slate-300">SQL Server Express</span>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-blue-900/40 text-blue-200 px-3 py-1 rounded-full text-xs font-mono border border-blue-500/30">Cyber-Résilience</span>
+                <span class="bg-blue-900/40 text-blue-200 px-3 py-1 rounded-full text-xs font-mono border border-blue-500/30">PowerShell Automation</span>
+                <span class="bg-blue-900/40 text-blue-200 px-3 py-1 rounded-full text-xs font-mono border border-blue-500/30">Active Directory</span>
+                <span class="bg-blue-900/40 text-blue-200 px-3 py-1 rounded-full text-xs font-mono border border-blue-500/30">PCA / DRP</span>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <div class="glass p-8 rounded-2xl border border-slate-700 hover:border-red-500/50 transition duration-500 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-3xl -z-10 group-hover:bg-red-600/20 transition"></div>
