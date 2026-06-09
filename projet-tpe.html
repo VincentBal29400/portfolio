@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Cybersécurité & Pentest | Balanant Vincent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'], }, colors: { 'tech-dark': '#0f172a', } } } }
+    </script>
+    <style>
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-table th { background: rgba(16, 185, 129, 0.1); border-bottom: 1px solid rgba(16, 185, 129, 0.3); }
+        .glass-table td { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="bg-tech-dark text-slate-300 font-sans min-h-screen pb-20">
+
+    <nav class="fixed w-full z-50 glass border-b border-slate-700">
+        <div class="max-w-6xl mx-auto px-4 flex items-center h-16">
+            <a href="index.html#projects" class="text-slate-400 hover:text-white transition flex items-center gap-2 font-medium">
+                <i class="fas fa-arrow-left"></i> Retour au Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-12 px-4 relative overflow-hidden">
+        <div class="absolute top-20 right-1/4 w-96 h-96 bg-emerald-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-10"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="flex flex-wrap justify-center gap-3 mb-6">
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-mono border border-emerald-500/30">Projet École</span>
+                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-sm font-mono border border-slate-600">Lab d'Apprentissage</span>
+                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-sm font-mono border border-slate-600">Pentest & Cyberdéfense</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Salle Informatique Pentest</h1>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+                Conception et déploiement d'une infrastructure sécurisée et isolée, dédiée à la formation pratique aux tests d'intrusion (CyberEnv).
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 space-y-12">
+        
+        <section class="glass p-8 rounded-2xl border border-slate-700">
+            <h2 class="text-2xl font-bold text-white mb-6 border-b border-slate-700 pb-2"><i class="fas fa-crosshairs text-emerald-500 mr-2"></i> Contexte & Ambition</h2>
+            <p class="leading-relaxed mb-6 text-justify text-slate-300">
+                L'ambition de ce projet était de concevoir un <strong>environnement pédagogique complet</strong> (machines de formation, cibles vulnérables, services d'entreprise simulés) permettant d'apprendre la cyberdéfense sans risque de fuite vers le réseau réel.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 p-5 rounded-xl border border-emerald-500/20">
+                    <h3 class="text-emerald-400 font-bold mb-2"><i class="fas fa-user-graduate mr-2"></i> Pédagogie</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Développement de scénarios progressifs (débutant à avancé), d'un catalogue d'exercices et d'outils de reporting pour étudiants et formateurs.</p>
+                </div>
+                <div class="bg-slate-800/50 p-5 rounded-xl border border-emerald-500/20">
+                    <h3 class="text-emerald-400 font-bold mb-2"><i class="fas fa-shield-virus mr-2"></i> Sécurité & Isolation</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Respect strict de l'éthique. Isolation complète du réseau (VLANs, NAT, Firewalls), journalisation des activités (logs) et sauvegardes.</p>
+                </div>
+                <div class="bg-slate-800/50 p-5 rounded-xl border border-emerald-500/20">
+                    <h3 class="text-emerald-400 font-bold mb-2"><i class="fas fa-robot mr-2"></i> Automatisation</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Déploiement massif des postes via PXE, gestion des conteneurs applicatifs et automatisation des services d'annuaire (AD, DHCP, DNS).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass p-8 rounded-2xl border border-slate-700">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-700 pb-2">
+                <h2 class="text-2xl font-bold text-white"><i class="fas fa-sitemap text-emerald-500 mr-2"></i> Architecture de l'Infrastructure (Proxmox)</h2>
+                <span class="font-mono text-sm bg-slate-800 px-3 py-1 rounded-md text-emerald-400 border border-slate-600">Domaine: sio.lan | Réseau: 192.168.10.0/24</span>
+            </div>
+            
+            <div class="overflow-x-auto mb-8">
+                <table class="w-full text-left border-collapse glass-table text-sm">
+                    <thead>
+                        <tr>
+                            <th class="p-4 font-bold text-white rounded-tl-lg">Hostname</th>
+                            <th class="p-4 font-bold text-white">IP</th>
+                            <th class="p-4 font-bold text-white">OS</th>
+                            <th class="p-4 font-bold text-white rounded-tr-lg">Rôles & Services déployés</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300">
+                        <tr class="hover:bg-slate-800/50 transition">
+                            <td class="p-4 font-mono text-emerald-400">sioad</td>
+                            <td class="p-4 font-mono text-slate-400">10.4</td>
+                            <td class="p-4">Ubuntu Minimized</td>
+                            <td class="p-4">Contrôleur de Domaine <strong>Samba 4 (AD)</strong>, DNS interne, Kerberos.</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition">
+                            <td class="p-4 font-mono text-emerald-400">siodhcp</td>
+                            <td class="p-4 font-mono text-slate-400">10.2</td>
+                            <td class="p-4">Ubuntu Server</td>
+                            <td class="p-4">Serveur <strong>Kea DHCP</strong> sécurisé par API, gestion des requêtes PXE.</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition">
+                            <td class="p-4 font-mono text-emerald-400">siodb</td>
+                            <td class="p-4 font-mono text-slate-400">10.5</td>
+                            <td class="p-4">Ubuntu Minimized</td>
+                            <td class="p-4">Base de données centralisée <strong>MariaDB 12.2.2</strong> (Zero-Config SSL).</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition">
+                            <td class="p-4 font-mono text-emerald-400">siolnx</td>
+                            <td class="p-4 font-mono text-slate-400">10.6</td>
+                            <td class="p-4">Ubuntu Server</td>
+                            <td class="p-4">Hôte <strong>Docker</strong> + Reverse Proxy <strong>Traefik</strong> (GLPI & Wiki.js).</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition">
+                            <td class="p-4 font-mono text-emerald-400">siofog</td>
+                            <td class="p-4 font-mono text-slate-400">10.8</td>
+                            <td class="p-4">Ubuntu Server</td>
+                            <td class="p-4">Déploiement d'images réseau Master (Kali Linux) via <strong>FOG Project</strong>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-slate-900 rounded-xl p-4 border border-slate-700 text-center">
+                <p class="text-slate-500 text-sm mb-2"><i class="fas fa-project-diagram"></i> Insérer ici le schéma d'infrastructure (Draw.io, Cisco)</p>
+                </div>
+        </section>
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Modules & Services Implémentés</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="glass p-8 rounded-2xl border border-slate-700 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full -z-10 group-hover:scale-125 transition-transform duration-500"></div>
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-id-card text-blue-400 mr-2"></i> Identité & DHCP (sioad / siodhcp)</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex gap-2 items-start"><i class="fas fa-check text-blue-400 mt-1"></i> <div><strong>Provisionnement AD :</strong> Mise en place de Samba 4 en tant que DC principal avec gestion complète des tickets Kerberos.</div></li>
+                        <li class="flex gap-2 items-start"><i class="fas fa-check text-blue-400 mt-1"></i> <div><strong>Zones DNS :</strong> Création de la zone <code class="text-xs text-blue-400">sio.lan</code> et de la zone inverse (PTR), incluant les alias CNAME pour les services web.</div></li>
+                        <li class="flex gap-2 items-start"><i class="fas fa-check text-blue-400 mt-1"></i> <div><strong>Kea DHCP & PXE :</strong> Configuration des pools IP et routage PXE avancé (<code class="text-xs text-blue-400">ipxe.efi</code> pour UEFI, <code class="text-xs text-blue-400">undionly.kpxe</code> pour BIOS) ciblant le serveur FOG.</div></li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border border-slate-700 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-bl-full -z-10 group-hover:scale-125 transition-transform duration-500"></div>
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fab fa-docker text-purple-400 mr-2"></i> Applicatif (siodb / siolnx)</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex gap-2 items-start"><i class="fas fa-check text-purple-400 mt-1"></i> <div><strong>MariaDB Centralisée :</strong> Base de données hébergeant <code class="text-xs text-purple-400">glpidb</code> et <code class="text-xs text-purple-400">wikidb</code>, avec chiffrement Zero-Config SSL natif.</div></li>
+                        <li class="flex gap-2 items-start"><i class="fas fa-check text-purple-400 mt-1"></i> <div><strong>Docker Compose :</strong> Déploiement conteneurisé de GLPI (Gestion de parc/Tickets) et Wiki.js (Documentation du Lab).</div></li>
+                        <li class="flex gap-2 items-start"><i class="fas fa-check text-purple-400 mt-1"></i> <div><strong>Traefik Reverse Proxy :</strong> Gestion du trafic HTTP/HTTPS avec terminaison TLS dynamique (certificats mkcert) pour <code class="text-xs text-purple-400">glpi.sio.lan</code> et <code class="text-xs text-purple-400">wiki.sio.lan</code>.</div></li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border border-slate-700 relative overflow-hidden group lg:col-span-2">
+                    <div class="absolute top-0 left-0 w-32 h-32 bg-emerald-500/10 rounded-br-full -z-10 group-hover:scale-125 transition-transform duration-500"></div>
+                    <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-clone text-emerald-400 mr-2"></i> Imagerie Réseau (siofog)</h3>
+                    <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                        Pour permettre aux étudiants en cybersécurité de travailler efficacement, j'ai automatisé le déploiement des postes de travail (Dell Optiplex) via FOG Project :
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex gap-2 items-start"><i class="fas fa-angle-right text-emerald-400 mt-1"></i> <div>Préparation d'une image Master <strong>Kali Linux Everything</strong> (45 Go, Sysprep effectué, ID machine purgé).</div></li>
+                            <li class="flex gap-2 items-start"><i class="fas fa-angle-right text-emerald-400 mt-1"></i> <div>Capture via Partclone Zstd en mode Single Disk Resizable.</div></li>
+                        </ul>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex gap-2 items-start"><i class="fas fa-angle-right text-emerald-400 mt-1"></i> <div>Configuration BIOS stricte (UEFI, AHCI, Secure Boot Off) pour assurer le boot réseau.</div></li>
+                            <li class="flex gap-2 items-start"><i class="fas fa-angle-right text-emerald-400 mt-1"></i> <div>Capacité de déploiement en <strong>Multicast</strong> pour équiper 10+ machines d'attaque simultanément et utilisation de Snapins.</div></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-white font-bold mb-6 text-center text-xl">Preuves de réalisation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700 text-center h-48 flex flex-col justify-center">
+                    <p class="text-slate-500 text-sm mb-2"><i class="fas fa-terminal"></i> Capture Terminal (Samba AD / Kea)</p>
+                </div>
+                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700 text-center h-48 flex flex-col justify-center">
+                    <p class="text-slate-500 text-sm mb-2"><i class="fas fa-desktop"></i> Capture Interface Web FOG Project</p>
+                </div>
+                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700 text-center h-48 flex flex-col justify-center">
+                    <p class="text-slate-500 text-sm mb-2"><i class="fas fa-ticket-alt"></i> Capture GLPI ou Traefik Dashboard</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
