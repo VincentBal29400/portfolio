@@ -42,15 +42,15 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <p class="leading-relaxed mb-4 text-justify text-slate-300">
-                        Dans le cadre d'un Plan de Continuité d'Activité (PCA), j'ai déployé la solution <strong>Semperis ADFR</strong> pour assurer la restauration complète de la forêt Active Directory <code class="text-blue-400">groupe-sill.inter</code> en cas de compromission majeure (ex: Ransomware)[cite: 144, 145].
+                        Dans le cadre d'un Plan de Continuité d'Activité (PCA), j'ai déployé la solution <strong>Semperis ADFR</strong> pour assurer la restauration complète de la forêt Active Directory <code class="text-blue-400">groupe-sill.inter</code> en cas de compromission majeure (ex: Ransomware).
                     </p>
                 </div>
                 <div class="bg-slate-800/50 p-5 rounded-xl border border-slate-600">
                     <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">Environnement technique</h3>
                     <ul class="space-y-2 text-sm text-slate-400">
-                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Serveur maître : Windows Server 2019 (Version anglaise)[cite: 5].</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Cibles (AD) : 2x VMs Windows Server 2012 R2[cite: 6].</li>
-                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Base de données : SQL Server Express[cite: 42, 64].</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Serveur maître : Windows Server 2019 (Version anglaise).</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Cibles (AD) : 2x VMs Windows Server 2012 R2.</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-400 mt-1"></i> Base de données : SQL Server Express.</li>
                     </ul>
                 </div>
             </div>
@@ -63,8 +63,8 @@
                 <div class="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
                 <h3 class="text-xl font-bold text-white mb-4">1. Enregistrement de la Forêt (PowerShell)</h3>
                 <p class="text-slate-300 mb-4 text-sm leading-relaxed">
-                    Une fois l'installation du serveur Semperis et de son module PowerShell terminée, la première étape critique a été d'enregistrer la forêt AD. J'ai utilisé le cmdlet <code class="text-pink-400 bg-pink-400/10 px-1 rounded">Register-ADFRForest</code> en ciblant le fichier de sauvegarde de la configuration[cite: 161]. 
-                    La forêt est ensuite passée à l'état "Registered" dans l'interface[cite: 164].
+                    Une fois l'installation du serveur Semperis et de son module PowerShell terminée, la première étape critique a été d'enregistrer la forêt AD. J'ai utilisé le cmdlet <code class="text-pink-400 bg-pink-400/10 px-1 rounded">Register-ADFRForest</code> en ciblant le fichier de sauvegarde de la configuration. 
+                    La forêt est ensuite passée à l'état "Registered" dans l'interface.
                 </p>
                 <div class="mt-4 bg-slate-900 rounded-xl p-4 border border-slate-700 text-center">
                     <img src="powershellforest.png" alt="Script PowerShell Semperis" class="rounded-lg mx-auto w-full max-w-2xl border border-slate-600 opacity-50 hover:opacity-100 transition">
@@ -75,7 +75,7 @@
                 <div class="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
                 <h3 class="text-xl font-bold text-white mb-4">2. Sécurisation et Contrôle d'Accès (RBAC)</h3>
                 <p class="text-slate-300 mb-4 text-sm leading-relaxed">
-                    La sécurité de l'outil de restauration est vitale. Dans la section "Role-Based Access Control", j'ai mappé le compte local "Informatique" et lui ai attribué les permissions strictes d'<strong>ADFR Recovery Administrator</strong>[cite: 203, 240, 241]. J'ai également configuré les questions de sécurité pour l'accès de secours[cite: 268, 269].
+                    La sécurité de l'outil de restauration est vitale. Dans la section "Role-Based Access Control", j'ai mappé le compte local "Informatique" et lui ai attribué les permissions strictes d'<strong>ADFR Recovery Administrator</strong>. J'ai également configuré les questions de sécurité pour l'accès de secours.
                 </p>
                 <div class="mt-4 bg-slate-900 rounded-xl p-4 border border-slate-700 text-center">
                     <img src="administrator.png" alt="RBAC Semperis" class="rounded-lg mx-auto w-full max-w-2xl border border-slate-600 opacity-50 hover:opacity-100 transition">
@@ -86,15 +86,15 @@
                 <div class="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
                 <h3 class="text-xl font-bold text-white mb-4">3. Préparation et Lancement de la Restauration</h3>
                 <p class="text-slate-300 mb-4 text-sm leading-relaxed">
-                    Après avoir copié les fichiers de sauvegarde dans <code class="text-blue-400">d:\backup</code>[cite: 292], je me suis rendu dans le menu "Forest Recovery". La procédure a impliqué :
+                    Après avoir copié les fichiers de sauvegarde dans <code class="text-blue-400">d:\backup</code>, je me suis rendu dans le menu "Forest Recovery". La procédure a impliqué :
                 </p>
                 <ul class="space-y-3 text-sm text-slate-300 mb-6 ml-4">
-                    <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-500 mt-1"></i> <strong>Déploiement des agents :</strong> Installation de l'agent ADFR sur les 2 serveurs cibles[cite: 347].</li>
-                    <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-500 mt-1"></i> <strong>Redirection IP :</strong> Ajout de la nouvelle adresse IP dans la zone "Redirect IP"[cite: 360].</li>
-                    <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-500 mt-1"></i> <strong>Cohérence matérielle :</strong> Vérification de l'alignement des partitions (Disques C: et D: identiques à l'original) pour éviter les erreurs lors de la restauration[cite: 387, 388].</li>
+                    <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-500 mt-1"></i> <strong>Déploiement des agents :</strong> Installation de l'agent ADFR sur les 2 serveurs cibles.</li>
+                    <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-500 mt-1"></i> <strong>Redirection IP :</strong> Ajout de la nouvelle adresse IP dans la zone "Redirect IP".</li>
+                    <li class="flex gap-2"><i class="fas fa-chevron-right text-blue-500 mt-1"></i> <strong>Cohérence matérielle :</strong> Vérification de l'alignement des partitions (Disques C: et D: identiques à l'original) pour éviter les erreurs lors de la restauration.</li>
                 </ul>
                 <p class="text-slate-300 text-sm leading-relaxed font-medium">
-                    Une fois l'analyse validée, la reconstruction de l'Active Directory a été lancée via l'action "Start Restore"[cite: 390, 401].
+                    Une fois l'analyse validée, la reconstruction de l'Active Directory a été lancée via l'action "Start Restore".
                 </p>
                 <div class="mt-6 bg-slate-900 rounded-xl p-4 border border-slate-700 text-center">
                     <img src="forest.png" alt="Interface Restauration AD" class="rounded-lg mx-auto w-full max-w-2xl border border-slate-600 opacity-50 hover:opacity-100 transition">
